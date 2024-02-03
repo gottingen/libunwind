@@ -409,6 +409,13 @@ include_directories(include)
 
 add_subdirectory(src)
 
+install(DIRECTORY include/
+  DESTINATION include
+  FILES_MATCHING
+  PATTERN "*.h"
+  PATTERN ".svn" EXCLUDE
+  )
+
 if (LIBUNWIND_INCLUDE_DOCS)
   add_subdirectory(docs)
 endif()
